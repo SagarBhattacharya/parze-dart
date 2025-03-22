@@ -1,5 +1,7 @@
-import 'package:parze/parze.dart' as parze;
+import 'package:parze/parze.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${parze.calculate()}!');
+  final parser = many(or([letters(), digits()]));
+  final result = parser.run("");
+  print(result);
 }
